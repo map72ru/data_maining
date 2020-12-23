@@ -1,1 +1,1 @@
-# data_maning
+# data_mining
