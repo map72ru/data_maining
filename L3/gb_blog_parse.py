@@ -29,7 +29,7 @@ class GbParse:
             print((message))
 
     def run(self):
-        page_no = 1
+        page_no = 318
         while True:
             page = requests.get(self.start_url, params={'page': page_no})
             soup = bs4.BeautifulSoup(page.text, 'lxml')
@@ -38,7 +38,7 @@ class GbParse:
 
             posts_urls = soup.find_all('a', attrs={'class': 'post-item__title'})
 
-            if posts_urls is None:
+            if posts_urls is None or len(posts_urls) == 0:
                 break
 
             for post_url in posts_urls:
