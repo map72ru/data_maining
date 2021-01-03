@@ -38,7 +38,7 @@ class GbParse:
 
             posts_urls = soup.find_all('a', attrs={'class': 'post-item__title'})
 
-            if posts_urls is None:
+            if posts_urls is None or len(posts_urls) == 0:
                 break
 
             for post_url in posts_urls:
