@@ -29,7 +29,7 @@ class GbParse:
             print((message))
 
     def run(self):
-        page_no = 318
+        page_no = 1
         while True:
             page = requests.get(self.start_url, params={'page': page_no})
             soup = bs4.BeautifulSoup(page.text, 'lxml')
